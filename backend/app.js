@@ -13,15 +13,6 @@ const UserRouter = require('./Routes/UserRouter.js')
 
 const PORT = process.env.PORT || 5000
 
-app.get('/bing', (req,res) =>[
-    res.send('BONG')
-])
-
-app.get('/ding', (req,res) =>[
-    res.send('DONG')
-])
-
-
 app.use(bodyParser.json());
 app.use(cors())
 
