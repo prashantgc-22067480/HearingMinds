@@ -1,0 +1,19 @@
+.verify-email-container{
+    width: 97%;
+    height: 130px;
+    margin: 10px;
+    padding-left: 15px;
+    align-content: center;
+}
+.verify-email-btn{
+    height: 30px;
+    width: auto;
+    background-color:#c69696;
+    color: white;
+    border: none;
+    
+    &:hover{
+        height: 33px;
+        font-size: 15px;
+    }
+}

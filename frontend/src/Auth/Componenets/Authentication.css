@@ -1,0 +1,107 @@
+.Authenticaiton-container__main{
+    width: 30%;
+    background-color: #D6F9E5;
+    border-radius: 0px 10px 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Authenticaiton-container{
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Authenticaiton-header span{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.Authenticaiton{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form{
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        label{
+            font-weight: 1000;
+        }
+
+        input{
+            height: 20px;
+            width:90%;
+            font-size: 15px;
+            background-color: transparent;
+            border:none;
+            border-bottom: solid 1px;
+            font-style: italic;
+            outline: none;
+
+            &:hover{
+                background-color: #9ce7c7;
+                transition: ease-in 0.25s;
+            }
+
+            &:focus{
+                font-style: normal;
+                background-color: #9ce7c7;
+            }
+        }
+
+        button{
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            background-color: #5BE4A9;
+            border: none;
+            border-radius: 7px;
+
+            &:hover{
+                background-color: #014A43;
+                color: white;
+                transition: ease-in 0.15s;
+                cursor: pointer;
+            }
+        }
+
+        
+    }
+    .bottom-signup{
+        font-size: 15px;
+        font-style: italic;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .Authenticaiton-container__main{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .Authenticaiton-container__main{
+        border-radius: none;
+        background-color: transparent;
+    }
+
+    .signup{
+        form{
+            input:hover{
+                background-color: rgb(222, 243, 215);
+            }
+        }
+    }
+    
+}
+
