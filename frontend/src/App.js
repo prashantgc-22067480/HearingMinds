@@ -13,7 +13,7 @@ import { NavContainer } from './Navigation/NavContainer';
 import { Login } from './Auth/Componenets/Login.js'
 import { Signup } from './Auth/Componenets/Signup.js'
 import { VerifyEmail } from './Auth/Componenets/VerifyEmail.js'
-import { ResetPassword } from './User/ResetPassword.js';
+import { PasswordReset } from './User/PasswordReset.js';
 
 function App() {
 
@@ -51,7 +51,9 @@ function App() {
               <Route path='/OurExperts' element={<OurExperts />} />
               <Route path='/AboutUs' element={<AboutUs />} />
               <Route path='api/auth/:_id/verify/:token' element={<VerifyEmail />} />
-              <Route path='api/user/:_id/reset-password/:token' element={<ResetPassword />} />
+              <Route path='api/user/:_id/reset-password/:token' element={<PasswordReset />} />
+
+              <Route path='/reset' element={<PasswordReset />} />
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
