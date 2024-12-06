@@ -49,15 +49,12 @@ const verifyToken = async (req, res) => {
         })
         
         if (!token) {
-            console.log('kkk')
             return res.status(400).json({
                 message: "Invalid 2 link",
                 success: false
             })
-        }else{
-            console.log('kk')
         }
-       
+        
         await user.updateOne({
             _id: user._id,
             verified: true

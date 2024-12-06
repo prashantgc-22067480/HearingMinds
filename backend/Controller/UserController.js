@@ -6,6 +6,9 @@ const bcrypt = require('bcrypt')
 const { resetMail } = require('../utils/utils')
 
 const sendResetMail = async (req, res) =>{
+
+    console.log('ok')
+
     try{
         const { email } = req.body
     
@@ -22,7 +25,7 @@ const sendResetMail = async (req, res) =>{
             token: crypto.randomBytes(32).toString("hex")
         }).save()
 
-        const url = `http://localhost:3000/api/user/${user._id}/reset-password/${token.token}`
+        const url = `http://localhost:3000/user/${user._id}/reset-password/${token.token}`
 
         await resetMail(user.email, url)
 
@@ -45,29 +48,27 @@ const resetPassword = async (req, res) =>{
 
         const user = await UserModel.findOne({_id:id})
 
-        console.log(user)
-
         if(!user){
             return res.status(404)
         }
 
-        const token = Token.findOne(
+        const token = await Token.findOne(
             {
                 token: userToken,
                 userID: user._id
             })
+        
+        console.log(token)
 
         if(!token){
             return res.error(400)
         }
 
-        token.deleteOne()
+        await token.deleteOne()
 
         console.log(newPassword)
 
         const hashPassword = await bcrypt.hash(newPassword, 10)
-        
-        console.log(hashPassword)
 
         await user.updateOne({
             password: hashPassword

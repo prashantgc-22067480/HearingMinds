@@ -8,9 +8,11 @@
     font-size: 20px;
     border-radius: 14px;
     position: relative;
+    box-shadow: rgba(1, 74, 67, 0.36) 0px 1px 4px;
 } 
 
 .form-container{
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,9 +26,9 @@
     text-align: center;  /* Center text horizontally */
   }
 
-.password-field{
+.input-field{
     height: 2em;
-    width: 200px;
+    width: 202px;
     font-style: italic;
     outline: none;
     border: none;
@@ -36,11 +38,12 @@
 
     &:hover{
         background-color: #edf7f1;
-        transition: ease-in 1s ;
+        transition: ease-in 0.25s ;
     }
 
     &:focus{
-        
+        border-bottom: none;
+        outline: 2px solid #89a7a6
     }
 }
 
@@ -72,6 +75,23 @@
         background-color: #014A43;
         color: white;
         outline: none;
-        transition: 0.35s ease-in-out;
+        transition: 0.15s ease-in-out;
     }
+}
+
+
+@media screen and (max-width: 450px) {
+
+    .form-container__main {
+        background-color: transparent;
+        display: flex;
+        height: 400px;
+        width: 500px;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        border-radius: 14px;
+        position: relative;
+        box-shadow: none;
+    } 
 }
