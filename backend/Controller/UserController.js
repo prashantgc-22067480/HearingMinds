@@ -6,9 +6,6 @@ const bcrypt = require('bcrypt')
 const { resetMail } = require('../utils/utils')
 
 const sendResetMail = async (req, res) =>{
-
-    console.log('ok')
-
     try{
         const { email } = req.body
     
