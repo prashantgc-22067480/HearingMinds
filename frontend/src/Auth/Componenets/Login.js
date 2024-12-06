@@ -85,7 +85,7 @@ export const Login = () =>{
                             <div>
                                 <button type="submit">Login</button><br/>
                                 <span className="bottom-signup">
-                                    <Link tp={'/reset/enter-email'}>Forgot Password?</Link>
+                                    <Link to={'/reset/enter-email'}>Forgot Password?</Link>
                                 </span><br />
                                 <span className="bottom-signup">Already have an account?<Link to={'/signup'}>Register</Link></span>
                             </div>
