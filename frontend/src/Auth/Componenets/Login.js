@@ -7,7 +7,7 @@ import { handleFailure, handleSuccess } from '../../shared/utils/Toast';
 
 import './Authentication.css'
 
-export const Login = () =>{
+export const Login = props =>{
     const navigate = useNavigate()
     const[loginInfo, setLoginInfo] = useState({
         email:'',
@@ -41,12 +41,13 @@ export const Login = () =>{
             const {message,success, data} = result
             if(success){
                 handleSuccess(message)
+                props.handle()
                 navigate('/')
+                localStorage.setItem("token",data)
             }
             else{
                 handleFailure(message)
             }
-            localStorage.setItem("token",data)
         }
         catch(err){
             handleFailure(err)

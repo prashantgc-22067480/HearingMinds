@@ -9,7 +9,7 @@ import { SideBarNav } from './Components/SideBarNav.js';
 export const NavContainer = props =>{
     return(
         <div className={`nav-container ${props.addClass}`}>
-            <Navigation />
+            <Navigation isAuth= {props.isAuth} />
             <SideBarNav />
         </div>
     )
